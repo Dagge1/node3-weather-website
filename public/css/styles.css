@@ -1,0 +1,35 @@
+body {
+    font-family: arial;
+    max-width: 650px; /* max čirina područja sa sadržajem */
+    margin: 0 auto;  /* space outside element box, margin 0 stavlja 0 top i bottom, auto u sredinu left i right*/
+    padding: 0 16px; /* space inside element box, 16 px lijevo i desno ako se stranica suzi ili na mobile */
+
+    display: flex;  /* enablamo flex posebno (defaultno nije).. */
+    flex-direction: column;  /* moramo odrediti smjer slaganja elemenata, da li horiznotalno (row) ili vertikalno (column) */
+    min-height: 100vh;  /* koliki će vertikalni dio ekrana zauzimati sadržaj, vh je view height, 100 je puni ekran tj footer će biti na dnu */
+}
+
+.main-content {
+    flex-grow: 1;  /* class main content će zauzimati sav ekran (dolje će biti footer koji nema .main-content class) */
+}
+
+h2, h1 {
+    color: red;
+}
+
+.portrait {
+    width: 200px;
+}
+
+input {
+    border: 1px solid #cccccc;
+    padding: 8px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #888888;
+    background: #888888;
+    color: white;
+    padding: 8px;
+}
