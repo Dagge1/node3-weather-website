@@ -23,12 +23,16 @@ h2, h1 {
 
 input {
     border: 1px solid #cccccc;
+    border-radius: 15px;
+    outline: none;  /* nakon klika mišem ne pojavi se plavi okvir kocka (forma je ovalna) */
     padding: 8px;
 }
 
 button {
     cursor: pointer;
     border: 1px solid #888888;
+    border-radius: 15px;
+    outline: none;  /* nakon klika mišem ne pojavi se plavi okvir kocka (forma je ovalna) */
     background: #888888;
     color: white;
     padding: 8px;

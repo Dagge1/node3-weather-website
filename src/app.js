@@ -8,6 +8,8 @@ const app = express();
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
 
+const port = process.env.PORT || 3000;
+
 // path.join() kombinira različite dijelove adrese u jedinstveni path, prvi dio je apsolutni path do root direktorija drugi je nastavak patha
 // drugi dio patha '..' znači jedan direktorij natrag od onog u kojem smo  '../..' ide dva direktorija unatrag
 //console.log(path.join(__dirname, '../public'));  
@@ -105,6 +107,6 @@ app.get('*', (req, res) => {
 });
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server started on port 3000');
 });

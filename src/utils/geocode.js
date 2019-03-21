@@ -4,8 +4,8 @@ const request = require('request');  // http request modul
 
 // naša callback reusable funkcija koja uspostavlja URL poziv i dobiva geolokacijske podatke
 // možemo je koristiti i pozivati odakle želimo
-const geocode = (address, callback) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImNqNnM2YmFoNzAwcTMzM214NTB1NHdwbnoifQ.Or19S7KmYPHW8YjRz82v6g&cachebuster=1552663217058&autocomplete=false&proximity=16.0389153%2C45.826543799999996&routing=true&limit=1';
+const geocode = (address, callback) => {    // encodeURIComponent pretvara spec. karaktere u čitljive, pa ne javlja grešku
+    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address) + '.json?access_token=pk.eyJ1IjoibWF0dGZpY2tlIiwiYSI6ImNqNnM2YmFoNzAwcTMzM214NTB1NHdwbnoifQ.Or19S7KmYPHW8YjRz82v6g&cachebuster=1552663217058&autocomplete=false&proximity=16.0389153%2C45.826543799999996&routing=true&limit=1';
     request({url, json: true}, (error, {body}) => {  // url je object shorthand za url: url.. {body} je destrucutred property objecta response
         if (error) {
             callback('Unable to connect to location services'); // ako je error u cb() definiramo samo priv parametar, drugi bude undefined

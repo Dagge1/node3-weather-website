@@ -14,7 +14,8 @@ weatherForm.addEventListener('submit', (event) => {  // dodaj event listener na 
     messageTwo.textContent = ''; 
     
     // fetch je browser client-side js generic http request, ne radi u Node backendu
-    fetch('http://localhost:3000/weather?address=' + location)
+    //fetch('http://localhost:3000/weather?address=' + location)  // ovo je bilo za localno
+    fetch('/weather?address=' + location)  // ovo je adresa za Heroku server
         .then((response) => {  // Promise, tek kada dobije odgovor lansira callback
             response.json().then((data) => {
                 if (data.error) {
